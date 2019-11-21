@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <div class="row">
+        <button @click="changeStatus">Change name</button>
         <app-header></app-header>
     </div>
     <hr>
     <div class="row">
       <app-servers></app-servers>
-      <app-details></app-details>
+      <app-details :name="name"></app-details>
     </div>
     <hr>
     <div class="row">
@@ -23,6 +24,16 @@
   import Footer from './components/Footer.vue';
 
   export default{
+    data: function(){
+      return {
+        name: 'Maja'
+      }
+    },
+    methods:{
+      changeStatus: function(){
+        return this.name = 'Djole'
+      }
+    },
     components:{
           'app-header': Header,
           'app-servers': Servers,
