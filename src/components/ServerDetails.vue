@@ -2,6 +2,7 @@
      <div class="col-xs-12 col-sm-6">
         <p>{{ serverDetails }}</p>
         <p>User name: {{ name }}</p>
+        <button class="btn btn-success" @click="resetName">Reset name</button>
     </div>
 </template>
 
@@ -17,5 +18,11 @@
                 serverDetails: "Server Details are currently not updated"
             }
         },
+        methods: {
+           resetName: function(){
+                this.name = 'Maja';
+                this.$emit('nameWasReset', this.name);
+           }
+        }
     }
 </script>

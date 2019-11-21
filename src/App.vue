@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="row">
-        <button @click="changeStatus">Change name</button>
+        <button class="btn btn-primary" @click="changeStatus">Change name</button>
         <app-header></app-header>
     </div>
     <hr>
     <div class="row">
       <app-servers></app-servers>
-      <app-details :name="name"></app-details>
+      <app-details :name="name" @nameWasReset="name = $event"></app-details>
     </div>
     <hr>
     <div class="row">
