@@ -6,9 +6,12 @@
     </div>
     <hr>
     <div class="row">
-      <app-servers></app-servers>
+      <app-servers :userAge="age"
+                   @ageWasEdited="age = $event"></app-servers>
+
       <app-details :name="name" @nameWasReset="name = $event"
-                   :resetFn="resetName"></app-details>
+                   :resetFn="resetName"
+                   :userAge="age"></app-details>
     </div>
     <hr>
     <div class="row">
@@ -27,7 +30,8 @@
   export default{
     data: function(){
       return {
-        name: 'Maja'
+        name: 'Maja',
+        age: 25
       }
     },
     methods:{
