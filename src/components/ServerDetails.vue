@@ -2,7 +2,8 @@
      <div class="col-xs-12 col-sm-6">
         <p>{{ serverDetails }}</p>
         <p>User name: {{ name }}</p>
-        <button class="btn btn-success" @click="resetName">Reset name</button>
+        <button class="btn btn-success" @click="resetName">Reset name</button><br><br>
+        <button class="btn btn-secondary" @click="resetFn()">Reset name</button>
     </div>
 </template>
 
@@ -11,7 +12,8 @@
         // props: ['name'],
         //or with type:
         props: {
-            name: String
+            name: String,
+            resetFn: Function
         },
         data: function(){
             return {

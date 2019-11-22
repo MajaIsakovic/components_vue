@@ -7,7 +7,8 @@
     <hr>
     <div class="row">
       <app-servers></app-servers>
-      <app-details :name="name" @nameWasReset="name = $event"></app-details>
+      <app-details :name="name" @nameWasReset="name = $event"
+                   :resetFn="resetName"></app-details>
     </div>
     <hr>
     <div class="row">
@@ -32,6 +33,9 @@
     methods:{
       changeStatus: function(){
         return this.name = 'Djole'
+      }, 
+      resetName(){
+        this.name = 'Maja';
       }
     },
     components:{
