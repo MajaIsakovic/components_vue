@@ -9,7 +9,13 @@ Vue.config.productionTip = false
 Vue.component('app-server-status', Home);
 Vue.component('header', Header);
 
-export const eventBus = new Vue();
+export const eventBus = new Vue({
+    methods: {
+        changeAge(data){
+          this.$emit('ageWasEdited', data);
+        }
+    }
+});
 
 new Vue({
   render: h => h(App),
